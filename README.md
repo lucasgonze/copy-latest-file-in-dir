@@ -1,6 +1,6 @@
 # copy-latest-file-in-dir
 
-Copy latest file in source directory to the current directory
+Shell script to copy latest file in source directory to the current directory
 
 Optionally renames that file
 
