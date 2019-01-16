@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# moves the most recent file in a directory to .
+
+if [ $# = 0 ]
+then
+  echo "Usage: $0 [source directory] [new file name]"
+  echo "Copies the most recent file in a directory to ."
+  echo "If 2nd argument is present, also renames the file copied over"
+  exit 1
+fi 
+
+directory=$1
+
+if [ "$2" = "" ]
+then
+  tgt=.
+else
+  tgt="./$2"
+fi
+
+IFS="
+"
+for file in `ls -tr "$directory" | tail -1`
+do
+  echo "copying $directory/$file to $tgt"
+  cp "$directory/$file" "$2"
+done
+
+
